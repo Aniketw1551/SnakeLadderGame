@@ -8,43 +8,31 @@ namespace SnakeLadderGame
 {
     public class StartPosition
     {
-        // Instance variable
+        //Instance Variables.
         int position = 0;
-        const int MaxPosition = 100;
-        const int MinPosition = -1;
+        const int MAX_POSITION = 100;
         const int LADDER = 1;
         const int SNAKE = 2;
-        Random random = new Random(); //Calling object class  
-
-        public void StartGame() //Calling Method
+        Random random = new Random(); // object of random class
+        //Method
+        public void RunGame()
         {
             Console.WriteLine("Player position is: " + position);
-            int i = 0;
-            while (i <= MaxPosition) //Using while loop till game reaches max position
+            int DiceValue = random.Next(1, 7);          //random number berween 1 to 6 for Dice Value.
+            int playCheck = random.Next(0, 3);          //Generating random value between 0 to 2 to control movement of player position
+            switch (playCheck)
             {
-            int DiceValue = random.Next(1, 7); //Generating random number between 0 and 6
-            int PlayCheck = random.Next(0, 3); //Generating random number between 0 and 2 to control movement of player position
-            if (position <= MinPosition)
-            {
-                position = 0;
-            }
-            else
-            {
-                switch (PlayCheck)
-                {
-                case (LADDER):
-                position += DiceValue;
+                case LADDER:
+                    Console.WriteLine("Move player position ahead of Dice Value ");
                     break;
-                case (SNAKE):
-                position -= DiceValue;
+                case SNAKE:
+                    Console.WriteLine("Move player position behind the Dice Value ");
                     break;
-
-                        default:
-                break;
-                }
+                default:
+                    Console.WriteLine("player will stays at his position ");
+                    break;
             }
-            i++;
         }
-        Console.WriteLine("Position of player after end of game: " + position);
+
     }
 }
