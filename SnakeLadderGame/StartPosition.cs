@@ -15,7 +15,7 @@ namespace SnakeLadderGame
         const int SNAKE = 2;
         Random random = new Random(); // object of random class
         //Method
-        public void RunGame()
+        public void StartGame()
         {
             Console.WriteLine("Player position is: " + position);
             int DiceValue = random.Next(1, 7);          //random number berween 1 to 6 for Dice Value.
