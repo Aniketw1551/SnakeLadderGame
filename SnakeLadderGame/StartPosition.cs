@@ -17,7 +17,7 @@ namespace SnakeLadderGame
         Random random = new Random();       // object of random class
         List<int> number = new List<int>();
         //Method
-        public void RunGame()
+        public void StartGame()
         {
             Console.WriteLine("Player position is: " + position);
             //Using While Loop to iterate Game till position reaches max position.
