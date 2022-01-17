@@ -10,7 +10,7 @@ namespace SnakeLadderGame
     {
         //Instance Variables.
         int position = 0;
-        const int MAX_POSITION = 100;
+        const int MaxPosition = 100;
         const int LADDER = 1;
         const int SNAKE = 2;
         Random random = new Random(); // object of random class
