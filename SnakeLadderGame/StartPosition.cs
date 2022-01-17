@@ -10,27 +10,43 @@ namespace SnakeLadderGame
     {
         //Instance Variables.
         int position = 0;
-        const int MAX_POSITION = 100;
+        const int MaxPosition = 100;
+        const int MinPosition = -1;
         const int LADDER = 1;
         const int SNAKE = 2;
-        Random random = new Random(); // object of random class
+        Random random = new Random();       // object of random class
+        List<int> number = new List<int>();
         //Method
         public void RunGame()
         {
             Console.WriteLine("Player position is: " + position);
-            int DiceValue = random.Next(1, 7);          //random number berween 1 to 6 for Dice Value.
-            int playCheck = random.Next(0, 3);          //Generating random value between 0 to 2 to control movement of player position
-            switch (playCheck)
+            //Using While Loop to iterate Game till position reaches max position.
+            int roll = 0;
+            while (position < MaxPosition)
             {
-                case LADDER:
-                    Console.WriteLine("Move player position ahead of Dice Value ");
-                    break;
-                case SNAKE:
-                    Console.WriteLine("Move player position behind the Dice Value ");
-                    break;
-                default:
-                    Console.WriteLine("player will stays at his position ");
-                    break;
+                int DiceValue = random.Next(1, 7);          //random number berween 1 to 6 for Dice Value
+                int playCheck = random.Next(0, 3);          //Generating random value between 0 to 2 to control movement of player position
+                switch (playCheck)
+                {
+                    case LADDER:
+                        if (position <= MaxPosition && (position + DiceValue) <= MinPosition)
+                        {
+                            position += DiceValue;
+                            Console.WriteLine("\nPosition of player in Game: " + position);
+
+                        }
+                        break;
+                    case SNAKE:
+                        if (position > 0 && (position - DiceValue) >= 0)
+                        {
+                            position -= DiceValue;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                roll++;
+                Console.WriteLine("Dice Roll:{0} and Player Position:{1}", roll, position);
             }
         }
 
