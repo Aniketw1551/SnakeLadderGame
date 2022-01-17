@@ -33,7 +33,7 @@ namespace SnakeLadderGame
                 int playCheck = random.Next(0, 3); //Generating random value between 0 to 2 to pass die to both players.                
                 if (playCheck == 1)
                 {
-                    //player ONE
+                    //Player ONE
                     playerOneDie = random.Next(1, 7);
                     playerOneDieCount++;
                     playerOneStatus = random.Next(0, 3);
@@ -88,7 +88,7 @@ namespace SnakeLadderGame
                 }
                 else if (playCheck == 2)
                 {
-                    //player TWO
+                    //Player TWO
                     playerTwoDie = random.Next(1, 7);
                     playerTwoDieCount++;
                     playerTwoStatus = random.Next(0, 3);
