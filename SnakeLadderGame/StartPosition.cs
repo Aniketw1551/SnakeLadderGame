@@ -33,13 +33,14 @@ namespace SnakeLadderGame
                 switch (PlayCheck)
                 {
                 case (LADDER):
-                position = += DiceValue;
-                    break
+                position += DiceValue;
+                    break;
                 case (SNAKE):
-                position = -= DiceValue;
+                position -= DiceValue;
                     break;
-                default;
-                    break;
+
+                        default:
+                break;
                 }
             }
             i++;
