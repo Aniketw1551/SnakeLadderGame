@@ -21,8 +21,8 @@ namespace SnakeLadderGame
             Console.WriteLine("Player position is: " + position);
             int i = 0;
             while (i <= MaxPosition) //Using while loop till game reaches max position
-
-                int DiceValue = random.Next(1, 7); //Generating random number between 0 and 6
+            {
+            int DiceValue = random.Next(1, 7); //Generating random number between 0 and 6
             int PlayCheck = random.Next(0, 3); //Generating random number between 0 and 2 to control movement of player position
             if (position <= MinPosition)
             {
@@ -31,10 +31,11 @@ namespace SnakeLadderGame
             else
             {
                 switch (PlayCheck)
-                case (LADDER)
+                {
+                case (LADDER):
                 position = += DiceValue;
                     break
-                case (SNAKE)
+                case (SNAKE):
                 position = -= DiceValue;
                     break;
                 default;
@@ -43,7 +44,6 @@ namespace SnakeLadderGame
             }
             i++;
         }
-            Console.WriteLine("Position of player after end of game: " + position);
-        }
+        Console.WriteLine("Position of player after end of game: " + position);
     }
 }
