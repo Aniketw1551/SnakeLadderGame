@@ -16,7 +16,7 @@ namespace SnakeLadderGame
         {
             Console.WriteLine("Player position is: " + position);
             int RandomNum = random.Next(1,7); //Generating random number between 0 and 6
-            Console.WriteLine("randomNum: " + randomNum);
+            Console.WriteLine("randomNum: " + RandomNum);
         }
     }
 }
