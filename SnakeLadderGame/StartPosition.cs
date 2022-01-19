@@ -9,7 +9,7 @@ namespace SnakeLadderGame
     public class StartPosition
     {
         //Instance Variables.
-        int playerOnePosition = 0;               //player One member variable
+        int playerOnePosition = 0;               //player one member variable
         int playerOneDieCount = 0;
         int playerOneStatus;
         int playerOneDie;
@@ -21,25 +21,25 @@ namespace SnakeLadderGame
         const int LADDER = 1;
         const int SNAKE = 2;
         Random random = new Random();       // object of random class
-        //Method
-        public void StartGame()
+       
+        public void StartGame()             //Method
         {
             Console.WriteLine("\nPosition of playerOne: " + playerOnePosition);
             Console.WriteLine("\nPosition of playerTwo: " + playerTwoPosition);
 
-            //Using While Loop to iterate Game till any of one player reaches max position.
+            //Using While Loop to iterate Game till any of one player reaches max position
             while (playerOnePosition < MaxPosition && playerTwoPosition < MaxPosition)
             {
-                int playCheck = random.Next(0, 3); //Generating random value between 0 to 2 to pass die to both players.                
-                if (playCheck == 1)
+                int playCheck = random.Next(0, 3); //Generating random value between 0 to 2 to pass die to both players               
+                if (playCheck == 1)                                 //value on die is 1
                 {
-                    //Player ONE
+                    //Player ONE conditions
                     playerOneDie = random.Next(1, 7);
                     playerOneDieCount++;
                     playerOneStatus = random.Next(0, 3);
                     switch (playerOneStatus)
                     {
-                        case LADDER:
+                        case LADDER:                                   //using case statements
                             if (playerOnePosition > MaxPosition)
                                 playerOnePosition -= playerOneDie;
                             while (playerOneStatus == LADDER)          //player gets ladder so playing again
@@ -55,7 +55,7 @@ namespace SnakeLadderGame
                                     if (playerOnePosition == MaxPosition)
                                         break;
                                 }
-                                if (playerOneStatus == SNAKE)
+                                if (playerOneStatus == SNAKE)    //player gets snake 
                                 {
                                     playerOnePosition -= playerOneDie;
                                     playerOneDieCount++;
@@ -72,32 +72,32 @@ namespace SnakeLadderGame
                     if (playerOnePosition < 0)
                     {
                         playerOnePosition = 0;
-                        Console.WriteLine("First player position is:" + playerOnePosition);
+                        Console.WriteLine("First player position is: " + playerOnePosition);
                     }
                     if (playerOnePosition < MaxPosition)
                     {
                         playerOnePosition += playerOneDie;
-                        Console.WriteLine("First player position is:" + playerOnePosition);
+                        Console.WriteLine("First player position is: " + playerOnePosition);
                     }
                     if (playerOnePosition == MaxPosition)
                     {
                         Console.WriteLine("First player reaches the winning position:" + playerOnePosition);
-                        Console.WriteLine("Total number of times rolled dice by first player is:" + playerOneDieCount);
+                        Console.WriteLine("Total number of times rolled dice by first player is:" + playerOneDieCount);  //printing total number od die rolled by 1st player
                         break;
                     }
                 }
-                else if (playCheck == 2)
+                else if (playCheck == 2)                          //value on die is 2
                 {
-                    //Player TWO
+                    //Player TWO conditions
                     playerTwoDie = random.Next(1, 7);
                     playerTwoDieCount++;
                     playerTwoStatus = random.Next(0, 3);
                     switch (playerTwoStatus)
                     {
-                        case LADDER:
-                            if (playerTwoPosition > MaxPosition)
+                        case LADDER:                                //using case statements
+                            if (playerTwoPosition > MaxPosition)   
                                 playerTwoPosition -= playerTwoDie;
-                            while (playerTwoStatus == LADDER)
+                            while (playerTwoStatus == LADDER)       //player gets ladder playing again
                             {
                                 playerTwoStatus = random.Next(0, 3);
                                 if (playerTwoStatus == LADDER)
@@ -110,7 +110,7 @@ namespace SnakeLadderGame
                                     if (playerTwoPosition == MaxPosition)
                                         break;
                                 }
-                                if (playerTwoStatus == SNAKE)
+                                if (playerTwoStatus == SNAKE)       //player gets snake
                                 {
                                     playerTwoPosition -= playerTwoDie;
                                     playerTwoDieCount++;
@@ -127,23 +127,20 @@ namespace SnakeLadderGame
                     if (playerTwoPosition < 0)
                     {
                         playerTwoPosition = 0;
-                        Console.WriteLine("Second player position is:" + playerTwoPosition);
+                        Console.WriteLine("Second player position is: " + playerTwoPosition);
                     }
                     if (playerTwoPosition < MaxPosition)
                     {
                         playerTwoPosition += playerTwoDie;
-                        Console.WriteLine("Second player position is:" + playerTwoPosition);
+                        Console.WriteLine("Second player position is: " + playerTwoPosition);
                     }
                     if (playerTwoPosition == MaxPosition)
                     {
-                        Console.WriteLine("Second player reaches the winning position:" + playerTwoPosition);
-                        Console.WriteLine("Total number of times dice rolled by second player is:" + playerTwoDieCount);
+                        Console.WriteLine("Second player reaches the winning position: " + playerTwoPosition); 
+                        Console.WriteLine("Total number of times dice rolled by second player is: " + playerTwoDieCount); //printing total number od die rolled by 2nd player
                     }
                 }
             }
         }
     }
 }
-       
-
- 
