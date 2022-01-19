@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="StartPosition.cs" />
+=======
+>>>>>>> 921375c02283705383af0ecae517fb5e272e3707
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
