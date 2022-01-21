@@ -31,7 +31,7 @@ namespace SnakeLadderGame
             while (playerOnePosition < MaxPosition && playerTwoPosition < MaxPosition)
             {
                 int playCheck = random.Next(0, 3); //Generating random value between 0 to 2 to pass die to both players               
-                if (playCheck == 1)                                 //value on die is 1
+                if (playCheck == 1)                                 //Die 1
                 {
                     //Player ONE conditions
                     playerOneDie = random.Next(1, 7);
@@ -86,7 +86,7 @@ namespace SnakeLadderGame
                         break;
                     }
                 }
-                else if (playCheck == 2)                          //value on die is 2
+                else if (playCheck == 2)                          //Die 2
                 {
                     //Player TWO conditions
                     playerTwoDie = random.Next(1, 7);
